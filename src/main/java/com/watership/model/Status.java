@@ -1,16 +1,14 @@
 package com.watership.model;
 
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 
 import lombok.Data;
 
 @Entity
-public @Data class Category {
+public @Data class Status {
 
 	@Id
 	@GeneratedValue
@@ -18,6 +16,10 @@ public @Data class Category {
 
 	private String name;
 
-	@OneToMany(mappedBy = "category")
-	private List<Task> tasks;
+	private Integer order;
+
+	private Boolean done;
+
+	@ManyToOne
+	private Project project;
 }

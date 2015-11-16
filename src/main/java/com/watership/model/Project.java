@@ -10,7 +10,7 @@ import javax.persistence.OneToMany;
 import lombok.Data;
 
 @Entity
-public @Data class Category {
+public @Data class Project {
 
 	@Id
 	@GeneratedValue
@@ -18,6 +18,12 @@ public @Data class Category {
 
 	private String name;
 
-	@OneToMany(mappedBy = "category")
+	@OneToMany(mappedBy = "project")
+	private List<Sprint> sprints;
+
+	@OneToMany(mappedBy = "project")
+	private List<Status> statuses;
+
+	@OneToMany(mappedBy = "project")
 	private List<Task> tasks;
 }
