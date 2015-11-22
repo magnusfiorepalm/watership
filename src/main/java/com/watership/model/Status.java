@@ -16,7 +16,7 @@ public @Data class Status {
 
 	private String name;
 
-	private Integer order;
+	private Integer statusOrder;
 
 	private Boolean done;
 
